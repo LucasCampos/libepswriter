@@ -31,7 +31,7 @@ bool epswriter::equalCurrColor(int r, int g, int b) {
 
 void epswriter::changeColor(int r, int g, int b) {
 	if (!equalCurrColor(r,g,b))
-		eps << r/255.0 << " " << g/255.0 << " " << b/255.0 << " setrgbcolor" << std::endl;
+		eps << r/65535.0 << " " << g/65535.0 << " " << b/65535.0 << " setrgbcolor" << std::endl;
 }
 
 
