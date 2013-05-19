@@ -43,6 +43,15 @@ void epswriter::line(double xfrom, double yfrom, double xto, double yto, int red
 
 }
 
+void epswriter::multiline (const std::vector<double>& x, const std::vector<double>& y, int red, int green, int blue) {
+	changeColor(red,green,blue);
+	if ((x.size() > 0) && (y.size() > 0))
+		eps << x[0] << " " << y[0] << " moveto" << std::endl;
+	for (int i=1; i<std::min(x.size(),y.size()); i++)
+		eps << x[i] << " " << y[i] << " lineto" << std::endl;
+	eps << "stroke" << std::endl;
+}
+
 void epswriter::drawBasicTriangle(double x1, double y1, double x2, double y2, double x3, double y3, int red, int green, int blue) {
 
 	changeColor(red,green,blue);
