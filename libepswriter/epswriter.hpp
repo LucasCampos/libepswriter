@@ -5,6 +5,14 @@
 #include <fstream>
 #include <cmath>
 #include <vector>
+#include <memory>
+
+struct WriterDeleter {
+	void operator()(std::ofstream* of) {
+		*of << "showpage" << std::endl;
+		delete of;
+	}
+};
 
 class epswriter {
 
@@ -12,7 +20,7 @@ class epswriter {
 		int currRed;
 		int currGreen;
 		int currBlue;
-		std::ofstream eps;
+		std::shared_ptr<std::ofstream> eps;
 		std::string name;
 
 		bool equalCurrColor(int r, int g, int b);
