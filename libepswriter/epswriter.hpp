@@ -20,6 +20,7 @@ class epswriter {
 		int currRed;
 		int currGreen;
 		int currBlue;
+		double lineWidth;
 		std::shared_ptr<std::ofstream> eps;
 		std::string name;
 
@@ -33,8 +34,8 @@ class epswriter {
 
 		epswriter(std::string fileName, double minX, double minY, double maxX, double maxY);
 		~epswriter();
-		void line(double xfrom, double yfrom, double xto, double yto, int red, int green, int blue);
-		void multiline (const std::vector<double>& x, const std::vector<double>& y, int red, int green, int blue);
+		void line(double xfrom, double yfrom, double xto, double yto, double width, int red, int green, int blue);
+		void multiline (const std::vector<double>& x, const std::vector<double>& y, double width, int red, int green, int blue);
 
 		void triangle(double x1, double y1, double x2, double y2, double x3, double y3, int red, int green, int blue);
 		void filledTriangle(double x1, double y1, double x2, double y2, double x3, double y3, int red, int green, int blue);

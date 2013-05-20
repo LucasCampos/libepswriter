@@ -5,6 +5,7 @@ epswriter::epswriter(std::string fileName, double minX, double minY, double maxX
 	eps=std::shared_ptr<std::ofstream>(new std::ofstream, WriterDeleter());
 
 	eps->open(fileName);
+	lineWidth = std::min(maxX-minX, maxY-minY)/20;
 	//Writes *eps header
 	*eps << " %!PS-Adobe-3.0 *epsF-3.0 " << std::endl;
 	*eps << "%%Pages: 1" << std::endl;
@@ -13,7 +14,7 @@ epswriter::epswriter(std::string fileName, double minX, double minY, double maxX
 	*eps << "%%EndComments" << std::endl << std::endl;
 
 	*eps << "0 0 0 setrgbcolor" << std::endl << std::endl;
-	*eps << std::min(maxX-minX, maxY-minY)/20 << " setlinewidth " << std::endl;
+	*eps << lineWidth << " setlinewidth " << std::endl;
 
 }
 
@@ -34,17 +35,29 @@ void epswriter::changeColor(int r, int g, int b) {
 		*eps << r/65535.0 << " " << g/65535.0 << " " << b/65535.0 << " setrgbcolor" << std::endl;
 }
 
+double myAbs(double a){
+	if (a < 0.0) return -a;
+	return a;
+}
 
-void epswriter::line(double xfrom, double yfrom, double xto, double yto, int red, int green, int blue){
+void epswriter::line(double xfrom, double yfrom, double xto, double yto,  double width, int red, int green, int blue){
 	changeColor(red,green,blue);
+	if (myAbs(width-lineWidth) > 1e-4){
+		lineWidth = width;
+		*eps << width << " setlinewidth" << std::endl;
+	}
 	*eps << xfrom << " " << yfrom << " moveto " << std::endl;
 	*eps << xto << " " << yto << " lineto " << std::endl;
 	*eps << "stroke " << std::endl;
 
 }
 
-void epswriter::multiline (const std::vector<double>& x, const std::vector<double>& y, int red, int green, int blue) {
+void epswriter::multiline (const std::vector<double>& x, const std::vector<double>& y, double width, int red, int green, int blue) {
 	changeColor(red,green,blue);
+	if (myAbs(width-lineWidth) > 1e-4){
+		lineWidth = width;
+		*eps << width << " setlinewidth" << std::endl;
+	}
 	if ((x.size() > 0) && (y.size() > 0))
 		*eps << x[0] << " " << y[0] << " moveto" << std::endl;
 	for (int i=1; i<std::min(x.size(),y.size()); i++)
