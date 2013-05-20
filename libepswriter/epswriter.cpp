@@ -33,6 +33,7 @@ bool epswriter::equalCurrColor(int r, int g, int b) {
 void epswriter::changeColor(int r, int g, int b) {
 	if (!equalCurrColor(r,g,b))
 		*eps << r/65535.0 << " " << g/65535.0 << " " << b/65535.0 << " setrgbcolor" << std::endl;
+	currRed=r; currGreen=g; currBlue=b;
 }
 
 double myAbs(double a){
