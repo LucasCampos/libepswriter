@@ -48,8 +48,7 @@ Draw a triangle, with vertex given by (x1,y1), (x2,y2), (x3,y3).
 void square(double xfrom, double yfrom, double xto, double yto, int red, int green, int blue);
 void filledSquare(double xfrom, double yfrom, double xto, double yto, int red, int green, int blue);
 ```
-
-Draw a square, with left-down corner on (xfrom, yfrom), and right-up corner on (xto, yto)
+This function is actually a misnomer. It draws a rectangle, with left-down corner on (xfrom, yfrom), and right-up corner on (xto, yto)
 
 ##Circle
 
