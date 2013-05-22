@@ -31,18 +31,20 @@ void line(double xfrom, double yfrom, double xto, double yto, double width, int 
 void multiline (const std::vector<double>& x, const std::vector<double>& y, double width, int red, int green, int blue);
 ```
 
-The fist function, line, just draws a simple line, starting at (xfrom, yfrom), and end at (xto, yto). Multiline draws a set of connected lines, with coordinates defined by the vectors x and y. This function does not check if they are the same size, and will halt after the smallest vector ends.
+The first function, line, just draws a simple line, starting at (xfrom, yfrom), and ending at (xto, yto). 
+Multiline draws a set of connected lines, with coordinates defined by the vectors x and y. 
+This function does not need them to be of the same size, and will halt after the smallest vector ends.
 
-##Triangle
+##Triangles
 
 ```c++
 void triangle(double x1, double y1, double x2, double y2, double x3, double y3, int red, int green, int blue);
 void filledTriangle(double x1, double y1, double x2, double y2, double x3, double y3, int red, int green, int blue);
 ```
 
-Draw a triangle, with vertex given by (x1,y1), (x2,y2), (x3,y3).
+Draws a triangle, with vertex given by (x1,y1), (x2,y2), (x3,y3).
 
-##Square
+##Squares
 
 ```c++
 void square(double xfrom, double yfrom, double xto, double yto, int red, int green, int blue);
@@ -50,14 +52,14 @@ void filledSquare(double xfrom, double yfrom, double xto, double yto, int red, i
 ```
 This function is actually a misnomer. It draws a rectangle, with left-down corner on (xfrom, yfrom), and right-up corner on (xto, yto)
 
-##Circle
+##Circles
 
 ```c++
 void circle(double xcentre, double ycentre, double radius, int red, int green, int blue);
 void filledCircle(double xcentre, double ycentre, double radius, int red, int green, int blue);
 ```
 
-Draw a circle, centred on (xcentre, ycentre), with given radius
+Draws a circle, centred on (xcentre, ycentre), with given radius
 
 #Known bugs
 
