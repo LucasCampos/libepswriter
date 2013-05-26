@@ -22,7 +22,7 @@ after which a file named fileName will be created, with boundaries defined by th
 
 ##General Notes
 
-The colors are always integers, varing from 0 to 65535. For now, it is left to the user the duty to obey these limits. 
+The colors are always integers, varying from 0 to 65535. For now, it is left to the user the duty to obey these limits. 
 
 ##Lines
 
