@@ -1,4 +1,4 @@
-libpngwriter
+libepswriter
 ========
 
 Simple eps generator. The interface was based on libpngwriter.
