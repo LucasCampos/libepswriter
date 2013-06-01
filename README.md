@@ -61,7 +61,7 @@ void filledCircle(double xcentre, double ycentre, double radius, int red, int gr
 
 Draws a circle, centred on (xcentre, ycentre), with given radius
 
-##
+##Text
 ```c++
 void writeText(double x, double y, std::string text);
 ```
