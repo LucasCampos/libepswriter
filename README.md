@@ -61,6 +61,13 @@ void filledCircle(double xcentre, double ycentre, double radius, int red, int gr
 
 Draws a circle, centred on (xcentre, ycentre), with given radius
 
+##
+```c++
+void writeText(double x, double y, std::string text);
+```
+
+Write a given string. For now, the font will be set to 10% of the drawing area.
+
 #Known bugs
 
 When drawing circles, a horizontal line appears in the center of the circle.

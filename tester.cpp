@@ -1,7 +1,7 @@
 /*
  * Author:	Lucas Costa Campos
  * Email: 	Rmk236@gmail.com
- * Version:	0.9
+ * Version:	0.91
  * License:	GNU General Public License
  * 		Copyright: 2013 Lucas Costa Campos
  * Website: 	https://github.com/LucasCampos/libepswriter
@@ -85,4 +85,12 @@ int main() {
 		ml.multiline(x,y, lineWidth, MyRand(),MyRand(),MyRand());
 	}
 
+	{
+		epswriter n("names.eps", xMin, yMin, xMax, yMax);
+		const double x1= 0  , y1=.5;
+		const double x2=-.25, y2=-.25;
+
+		n.writeText(x1,y1,"Very nice name");
+		n.writeText(x2,y2,"Nice name indeed");
+	}
 }

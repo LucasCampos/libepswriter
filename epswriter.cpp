@@ -1,7 +1,7 @@
 /*
  * Author:	Lucas Costa Campos
  * Email: 	Rmk236@gmail.com
- * Version:	0.9
+ * Version:	0.91
  * License:	GNU General Public License
  * 		Copyright: 2013 Lucas Costa Campos
  * Website: 	https://github.com/LucasCampos/libepswriter
@@ -42,6 +42,7 @@ epswriter::epswriter(std::string fileName, double minX, double minY, double maxX
 
 	*eps << "0 0 0 setrgbcolor" << std::endl << std::endl;
 	*eps << lineWidth << " setlinewidth " << std::endl;
+	*eps << "/Helvetica " << lineWidth*2 << " selectfont" << std::endl;
 
 }
 
@@ -151,4 +152,11 @@ void epswriter::circle(double xcentre, double ycentre, double radius, int red, i
 void epswriter::filledCircle(double xcentre, double ycentre, double radius, int red, int green, int blue) {
 	drawBasicCircle(xcentre, ycentre, radius, red, green, blue);
 	*eps << "fill" << std::endl;
+}
+
+
+void epswriter::writeText(double x, double y, std::string text) {
+
+	*eps << x << " " << y << " moveto" << std::endl;
+	*eps << "(" << text <<") show" << std::endl;
 }

@@ -1,7 +1,7 @@
 /*
  * Author:	Lucas Costa Campos
  * Email: 	Rmk236@gmail.com
- * Version:	0.9
+ * Version:	0.91
  * License:	GNU General Public License
  * 		Copyright: 2013 Lucas Costa Campos
  * Website: 	https://github.com/LucasCampos/libepswriter
@@ -73,6 +73,8 @@ class epswriter {
 		
 		void circle(double xcentre, double ycentre, double radius, int red, int green, int blue);
 		void filledCircle(double xcentre, double ycentre, double radius, int red, int green, int blue);
+		
+		void writeText(double x, double y, std::string text);
 
 
 };
