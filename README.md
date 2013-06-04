@@ -63,10 +63,10 @@ Draws a circle, centred on (xcentre, ycentre), with given radius
 
 ##Text
 ```c++
-void writeText(double x, double y, std::string text);
+void writeText(double x, double y, std::string text, double font, int red, int green, int blue);
 ```
 
-Write a given string. For now, the font will be set to 10% of the drawing area.
+Write a given string, with font as fontSize, in box coordinates.
 
 #Known bugs
 

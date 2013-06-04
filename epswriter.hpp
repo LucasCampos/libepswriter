@@ -1,13 +1,4 @@
 /*
- * Author:	Lucas Costa Campos
- * Email: 	Rmk236@gmail.com
- * Version:	0.91
- * License:	GNU General Public License
- * 		Copyright: 2013 Lucas Costa Campos
- * Website: 	https://github.com/LucasCampos/libepswriter
- */
-
-/*
  *     This file is part of libepswriter.
  *
  *     libepswriter is free software; you can redistribute it and/or modify
@@ -49,6 +40,7 @@ class epswriter {
 		int currGreen;
 		int currBlue;
 		double lineWidth;
+		double fontSize;
 		std::shared_ptr<std::ofstream> eps;
 		std::string name;
 
@@ -74,7 +66,7 @@ class epswriter {
 		void circle(double xcentre, double ycentre, double radius, int red, int green, int blue);
 		void filledCircle(double xcentre, double ycentre, double radius, int red, int green, int blue);
 		
-		void writeText(double x, double y, std::string text);
+		void writeText(double x, double y, std::string text, double font, int red, int green, int blue);
 
 
 };

@@ -1,13 +1,4 @@
 /*
- * Author:	Lucas Costa Campos
- * Email: 	Rmk236@gmail.com
- * Version:	0.91
- * License:	GNU General Public License
- * 		Copyright: 2013 Lucas Costa Campos
- * Website: 	https://github.com/LucasCampos/libepswriter
- */
-
-/*
  *     This file is part of libepswriter.
  *
  *     libepswriter is free software; you can redistribute it and/or modify
@@ -90,7 +81,7 @@ int main() {
 		const double x1= 0  , y1=.5;
 		const double x2=-.25, y2=-.25;
 
-		n.writeText(x1,y1,"Very nice name");
-		n.writeText(x2,y2,"Nice name indeed");
+		n.writeText(x1,y1,"Very nice name", 0.2, 0,0, 0);
+		n.writeText(x2,y2,"Nice name indeed", 0.2, 0,0,0);
 	}
 }
